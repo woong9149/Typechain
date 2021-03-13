@@ -4,34 +4,34 @@
 // 	gender: string
 // }
 
-class Human {
-	public name: string;
-	public age: number;
-	public gender: string;
+class Block {
+	public index: number;
+	public hash: string;
+	public previousHash: string;
+	public data: string;
+	public timestamp: number;
 
-	constructor(name: string, age: number, gender?: string) {
-		this.name = name;
-		this.age = age;
-		this.gender = gender;
+	constructor(
+		index: number,
+		hash: string,
+	 	previousHash: string,
+	 	data: string,
+	 	timestamp: number
+	) {
+		this.index = index;
+		this.hash = hash;
+		this.previousHash = previousHash;
+		this.data = data;
+		this.timestamp = timestamp;
 	}
 }
 
-const lynn = new Human("Lynn", 18, "female");
+const genesisBlock:Block = new Block(0, "hajdlir2l3kdlfij0", "", "HELLO", 20210313);
 
-const person = {
-	name : "Nicolas",
-	age : 24,
-	gender : "male",
-};
+let blockchin: [Block] = [genesisBlock];
 
-const sayHi = (person: Human): void => {
-	console.log(`Hello ${person.name}, you are ${person.age}, you are a ${person.gender} !`);
-};
+console.log(blockchin);
 
-// sayHi(name, age, gender);
-sayHi(lynn);
+
 
 export {};
-
-
-
